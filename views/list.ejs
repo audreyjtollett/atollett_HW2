@@ -1,0 +1,17 @@
+<%- include('./partials/header') %>
+<ul>
+    <% all.forEach((b) => { %>
+      <h2>Primary Protein: <%= b[0] %></h2>
+      <table>
+
+      </table>
+      <% b[1].forEach((r) => { %>
+        <tr>
+          <th>
+            <h3><a href=<%= "recipe/" + r.ID %> ><%= r.Title %></a></h3>
+          </th>
+        </tr>
+      <% }); %>
+    <% }); %>
+  </ul>
+<%- include('./partials/footer') %>

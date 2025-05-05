@@ -1,0 +1,20 @@
+<%- include('./partials/header') %>
+<body>
+    <h2><b><%- title %></b></h2>
+
+    <h2>Ingredients:</h2>
+    <ul>
+        <% ingredients.forEach((i) => { %>
+            <li>
+                <span class="tooltip">
+                    <%= i.Amount %> <%= i.Title %>
+                    <span class="tooltiptext"><%= i.Info %></span>
+                </span>
+            </li>
+        <% }); %>
+    </ul>
+
+    <h2>Instructions:</h2>
+    <p><%- instructions %></p>
+</body>
+<%- include('./partials/footer') %>

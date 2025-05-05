@@ -1,0 +1,28 @@
+<%- include('./partials/header') %>
+    <body>
+        <h2>Enter new recipe information here, please.</h2>
+        <form action="add" method="POST">
+            <label for="title"><b>Recipe Title:</label>
+            <input type="text" id="title" name="title"><br>
+            <label for="instructions">Instructions:</label>
+            <input type="text" id="instructions" name="instructions"><br>
+            <label>Ingredients: </label>
+            <% ingredients.forEach((i) => { %>
+            <div>
+                <input type="checkbox" name="ingredients" value=<%- i.ID %>> <b><%- i.Title %></b>
+                <span class="item">
+                    <label for="amounts"> Amount? :</label>
+                    <input type="text" id="amounts" name="amounts"><br>
+                </span>
+                <span class="item">
+                    <label for="pp">Primary Protein? :</label>
+                    <input type="checkbox" name="pp" value=<%- i.ID %>>
+                </span>
+            </div>
+            <% }); %>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </body>
+<%- include('./partials/footer') %>
